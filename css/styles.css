@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Reset do CSS padrão do browser */
 * {
     margin: 0;
     padding: 0;
@@ -8,3 +9,18 @@
     font-family: sans-serif;
 }
 
+#container {
+    width: 320px;
+    background-color: lightgrey;
+    border: 1px solid red;
+    margin: auto;
+}
+
+/* Estilização da div profile */
+.profile img {
+    display: block;
+    margin: auto;
+    width: 112px;
+    border-radius: 50%;
+    border: 2px solid #FAFAFA;
+}
