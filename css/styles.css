@@ -18,6 +18,7 @@
     --surface-color: rgba(255, 255, 255, .1);
     --surface-color-hover: rgba(255, 255, 255, .05);
     --highlight-color: rgba(255, 255, 255, .2);
+    --switch-bg-url: url(../img/moon-stars.svg);
 }
 
 .light {
@@ -28,6 +29,7 @@
     --surface-color: rgba(0, 0, 0, .05);
     --surface-color-hover: rgba(0, 0, 0, .02);
     --highlight-color: rgba(0, 0, 0, .2);
+    --switch-bg-url: url(../img/sun.svg);
 }
 /* Usam a mesma variável - com valores diferentes nos modos */
 
@@ -65,6 +67,39 @@ body * {
     font-weight: 500;
     line-height: 24px;
     margin-top: 8px;
+}
+
+/* SWITCH */
+#switch {
+    padding: 16px 0;
+    position: relative; /* para que o button fique absoluto dentro do switch */
+    width: 64px;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: #FFF var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute; /* dentro do switch */
+    top: 50%; /* com o transform vai ficar exatamente no centro */
+    right: 0;
+    z-index: 1; /* ficar na frente|sobre */
+    transform: translateY(-50%);
+}
+
+#switch span {
+    display: block; /* para o span aceitar altura e largura */
+    width: 64px;
+    height: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
 }
 
 /* LINKS */
@@ -125,7 +160,6 @@ ul li a:hover {
 
 /* FOOTER */
 footer {
-    padding: 24px 0;
     text-align: center;
     font-size: 14px;
 }
