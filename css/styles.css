@@ -10,10 +10,25 @@
     color: #FAFAFA;
 }
 
+:root {
+    --text-color: #FFF;
+    --bg-url: url(../img/bg-mobile.jpg);
+}
+
+.light {
+    --text-color: #000;
+    --bg-url: url(../img/bg-mobile-light.jpg);
+}
+
 body {
-    background-image: url(../img/bg-mobile.jpg);
+    background-image: var(--bg-url);
     background-repeat: no-repeat;
+    background-position: top center;
     background-size: cover;
+}
+
+body * {
+    color: var(--text-color);
 }
 
 #container {
@@ -70,7 +85,7 @@ ul li a {
 
 ul li a:hover {
     background: rgba(255, 255, 255, .05);
-    border: 1.5px solid #FFF;
+    border: 1.5px solid var(--text-color);
 }
 
 /* Social links */
