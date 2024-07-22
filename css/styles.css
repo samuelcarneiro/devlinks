@@ -54,7 +54,6 @@ body * {
 /* Estilização da div profile */
 .profile {
     text-align: center;
-    padding: 24px;
 }
 
 .profile img {
@@ -74,6 +73,9 @@ body * {
     padding: 16px 0;
     position: relative; /* para que o button fique absoluto dentro do switch */
     width: 64px;
+
+    /* Como o switch é display block, alinhar ao centro com o margin auto */
+    margin: 4px auto;
 }
 
 #switch button {
@@ -85,7 +87,7 @@ body * {
 
     position: absolute; /* dentro do switch */
     top: 50%; /* com o transform vai ficar exatamente no centro */
-    right: 0;
+    left: 0;
     z-index: 1; /* ficar na frente|sobre */
     transform: translateY(-50%);
 }
@@ -100,6 +102,13 @@ body * {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 9999px;
+}
+
+.light #switch button {
+    /* Por que o .light está em primeiro? Porque a classe está no html
+     * e só será ativada quando a .light estiver ativa */
+    right: 0;
+    left: initial;
 }
 
 /* LINKS */
